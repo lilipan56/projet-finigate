@@ -10,6 +10,11 @@ header{
     /*background-color: #A89260;*/
 }
 
+header img{
+    width: 250px;
+    height: 95px;
+}
+
 header nav{
     margin-top: 30px;
 }
