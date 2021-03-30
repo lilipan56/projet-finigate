@@ -6,7 +6,7 @@
         <meta name="description" content="Finigate">
         <meta name="keywords" content="Finigate">
         <link rel="stylesheet" type="text/css" href="../src/Finigate.css">
-        <script src="../src/Finigate.js"></script>
+        <script src="../src/Finigate.js" type="text/javascript"></script> 
     </head>
     <body>
         <header>
@@ -17,8 +17,8 @@
             <img alt="Finigate Logo" src="source/logo.png">
             <nav>
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">NEW ARRIVALS</a></li>
+                    <li><a href="./Finigate.html">HOME</a></li>
+                    <li><a href="#new-arrivals">NEW ARRIVALS</a></li>
                     <li class="dropdown"><a href="#">PRODUCTS</a>
                         <div class="dropdown-menu">
                             <div class="dropdown-food"><a href="#">Food</a>
@@ -54,18 +54,35 @@
                             </div>    
                         </div>
                     </li>
-                    <li><a href="#">PARTNERS</a></li>
+                    <li><a href="#partners">PARTNERS</a></li>
                     <li>
-                        <a href="#">CONTACT US</a>
+                        <a href="#contact">CONTACT US</a>
                     </li>   
                 </ul>
             </nav>
         </header>
-        <div class="poster">
-            <img alt="Gift Boxes" src="source/poster_giftbox.jpg">
+        <div id="container">
+            <div id="list" style="left: -1150px">
+                <img alt="Patrick" src="source/poster_patrick.jpg">
+                <img alt="Gift Boxes" src="source/poster_giftbox.jpg">
+                <img alt="Kapriol" src="source/poster_kapriol.jpg">
+                <img alt="Grano" src="source/poster_grano.jpg">
+                <img alt="Fallot" src="source/poster_fallot.jpg">
+                <img alt="Patrick" src="source/poster_patrick.jpg">
+                <img alt="Gift Boxes" src="source/poster_giftbox.jpg">
+            </div>
+            <div id="buttons">
+                <span index="1" class="on"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+                <span index="4"></span>
+                <span index="5"></span>
+            </div>
+            <a href="javascript:;" class="arrow" id="prev">&lt</a>
+            <a href="javascript:;" class="arrow" id="next">&gt</a>
         </div>
         <div class="new-arrivals">
-            <h2>New Arrivals</h2>
+            <h2><a href="#" name="new-arrivals">New Arrivals</a></h2>
             <hr class="content-separator">
             <div class="product-list">
                 <div class="flex-container"> 
@@ -107,7 +124,7 @@
             </div>
         </div>
         <div class="partners">
-            <h2>Partners</h2>
+            <h2><a href="#" name="partners">Partners</a></h2>
             <hr class="content-separator">
             <div class="logos">
                 <div class="logo">
@@ -133,7 +150,7 @@
           <p>Welcome to Finigate, your gateway to fine foods in China. At Finigate we strive to provide you with the best selection of distinctive imported gourmet foods from across the world. Finigate, with offices in Shanghai, and a branch office in Naples, imports, warehouses, and distributes a line of high-quality foods from around the world. To ensure smooth and quick supply chain operations, we leverage the know-how and strength of our sister company, Finigate Integrated Logistics, for freight forwarding, customs clearance, warehousing and distribution. Because Finigate is a direct importer, we offer products that are not only unique in taste and quality but also very competitively priced. In an effort to better serve you, we are continuously expanding our product line. If you are looking for a specific product, please contact us and we'll do our best to satisfy your request. </p>
         </div>
         <div class="contact">
-            <h2>Contact</h2>
+            <h2><a href="#" name="contact">Contact</a></h2>
             <hr class="content-separator">
             <div class="contact-info">
                 <p><span class="bold">Address:</span> No.572 Kunming Road, RongGuang Business Center, Area B, Room 401A-401D, Shanghai, 200082 P.R. China</p>
