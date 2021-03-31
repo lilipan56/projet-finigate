@@ -169,16 +169,18 @@ li a:hover{
     margin-top: 250px;
     overflow: hidden;
     position: relative;
-    width: 1150px;
-    height: 360px;
-    margin-left: 5%;
+    width: 90%;
+    height: 359px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #dddddd;
 }
 
 #list{
     position: absolute;
     z-index: 1;
-    width: 10000px;
-    height: 360px;
+    width: 8050px;
+    height: 359px;
 }    
 
 #list img{

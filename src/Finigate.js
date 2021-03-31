@@ -7,7 +7,7 @@ window.onload = function () {
     let index = 1;
 
     function showButton() {
-        for (let i=0; i < buttons.length; i++){
+        for (let i = 0; i < buttons.length; i++){
             if (buttons[i].className === 'on'){
                 buttons[i].className = '';
                 break;
@@ -47,5 +47,18 @@ window.onload = function () {
         
         showButton();
         animate(1150)
+    }
+
+    for(let i=0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+            if (this.className === 'on') {
+                return;
+            }
+            let myIndex = parseInt(this.getAttribute('index'));
+            let offset = -1150 * (myIndex - index);
+            animate(offset);
+            index = myIndex;
+            showButton();
+        }
     }
 }
