@@ -27,6 +27,16 @@ window.onload = function () {
         }
     }
 
+    function play() {
+        timer = setInterval(function() {
+            next.onclick();
+        }, 2000);
+    }
+
+    function stop() {
+        clearInterval(timer);
+    }
+
     next.onclick = function () {
         if (index === 5){
             index = 1;
@@ -61,4 +71,9 @@ window.onload = function () {
             showButton();
         }
     }
+
+    container.onmouseover = stop;
+    container.onmouseout = play;
+
+    play();
 }
