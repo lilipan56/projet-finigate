@@ -5,7 +5,11 @@ window.onload = function () {
     let prev = document.getElementById('prev');
     let next = document.getElementById('next');
     let index = 1;
-
+    let productContainer = document.getElementById('product-container');
+    let productList = document.getElementById('product-list');
+    let productPrev = document.getElementById('product-prev');
+    let productNext = document.getElementById('product-next');
+    
     function showButton() {
         for (let i = 0; i < buttons.length; i++){
             if (buttons[i].className === 'on'){
@@ -76,4 +80,39 @@ window.onload = function () {
     container.onmouseout = play;
 
     play();
+
+    function productAnimate(offset) {
+        let newLeft = parseInt(productList.style.left) + offset;
+        productList.style.left = `${newLeft}px`;
+        if(newLeft > -1080){
+            productList.style.left = `${-8640}px`;
+        }
+        if(newLeft < -8640){
+            productList.style.left = `${-1080}px`;
+        }
+    }
+
+    function productPlay() {
+        timer = setInterval(function() {
+            productNext.onclick();
+        }, 2000);
+    }
+
+    function productStop() {
+        clearInterval(timer);
+    }
+
+    productNext.onclick = function () {
+        productAnimate(-1080);
+    }
+
+    productPrev.onclick = function () {
+        productAnimate(1080);
+    }
+
+    productContainer.onmouseout = productPlay;
+    productContainer.onmouseover = productStop;
+
+    productPlay();
 }
+

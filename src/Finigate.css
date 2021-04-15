@@ -249,33 +249,74 @@ li a:hover{
     color: #A89260;
 }
 
-.new-arrivals,
+#new-arrivals,
 .partners,
 .company-presentation,
 .contact
 {
-    margin-left: 60px; 
-    margin-right: 60px;
+    margin-left: 100px; 
+    margin-right: 100px;
 }
 
 
-.new-arrivals{
+#new-arrivals{
     margin-top: 100px;
 }
 
-.new-arrivals .product-list p{
-    text-align: center;
+#product-container{
+    margin-top: 60px;
+    overflow: hidden;
+    position: relative;
+    width: 1080px;
+    height: 359px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.new-arrivals .product-list .flex-container .product img{
+#product-list{
+    position: absolute;
+    z-index: 1;
+    width: 8650px;
+    height: 359px;
+    display: flex;
+}    
+
+#product-list p{
+    text-align: center;
+    font-size: 12px;
+}
+
+.product img{
     width: 270px;
     height: 270px;
 }
 
-.new-arrivals .product-list .flex-container{
-    display: flex;
-    justify-content: space-around;
-}    
+.product-arrow{
+    cursor: pointer;
+    line-height: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 2;
+    margin-top: -405px;
+    margin-right: 0px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: burlywood;
+    border: solid burlywood;
+    border-radius: 5px;
+}
+
+#product-prev{
+    right: 140px;
+}
+
+#product-next{
+    right: 100px;
+}
 
 .partners{
     margin-top: 120px;
@@ -317,11 +358,11 @@ footer{
     margin-top: 80px;
     background-color: #A89260;
     color: #ffffff;
+    margin-bottom: 0px;
 }
 
 footer img{
     width: 150px;
-    height: 60px;
 }
 
 
