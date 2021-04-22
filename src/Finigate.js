@@ -5,10 +5,12 @@ window.onload = function () {
     let prev = document.getElementById('prev');
     let next = document.getElementById('next');
     let index = 1;
-    let productContainer = document.getElementById('product-container');
     let productList = document.getElementById('product-list');
     let productPrev = document.getElementById('product-prev');
     let productNext = document.getElementById('product-next');
+    let partnersList = document.getElementById('partners-list');
+    let partnersPrev = document.getElementById('partners-prev');
+    let partnersNext = document.getElementById('partners-next');
     
     function showButton() {
         for (let i = 0; i < buttons.length; i++){
@@ -110,9 +112,44 @@ window.onload = function () {
         productAnimate(1080);
     }
 
-    productContainer.onmouseout = productPlay;
-    productContainer.onmouseover = productStop;
+    productList.onmouseout = productPlay;
+    productList.onmouseover = productStop;
 
     productPlay();
+
+    function logoAnimate(offset) {
+        let newLeft = parseInt(partnersList.style.left) + offset;
+        partnersList.style.left = `${newLeft}px`;
+        if(newLeft > -1070){
+            partnersList.style.left = `${-12840}px`;
+        }
+        if(newLeft < -12840){
+            partnersList.style.left = `${-1070}px`;
+        }
+    }
+
+    function partnersPlay() {
+        timer = setInterval(function() {
+            partnersNext.onclick();
+        }, 2000);
+    }
+
+    function partnersStop() {
+        clearInterval(timer);
+    }
+
+    partnersNext.onclick = function () {
+        logoAnimate(-1070);
+    }
+
+    partnersPrev.onclick = function() {
+        logoAnimate(1070);
+    }
+
+    partnersList.onmouseout = partnersPlay;
+    partnersList.onmouseover = partnersStop;
+
+    partnersPlay();
+
 }
 

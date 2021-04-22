@@ -322,13 +322,61 @@ li a:hover{
     margin-top: 120px;
 }
 
-.partners .logos{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
-}   
+#partners-container{
+    width: 1070px;
+    position: relative;
+    overflow: hidden;
+}
 
+#partners-list{
+    display: flex;
+    margin-top: 80px;
+    width: 13840px;
+    z-index: 1;
+    position: relative;
+} 
+
+.partners-items{
+    display: flex;
+    list-style: none;
+}
+
+.logo{
+    margin-right: 42px;
+    width: 130px;
+    height: 70px;
+}
+
+.logo img{
+    width: 130px;
+    height: 70px;
+}
+
+.partners-arrow{
+    cursor: pointer;
+    line-height: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 2;
+    margin-top: -175px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: burlywood;
+    border: solid burlywood;
+    border-radius: 5px;
+}
+
+#partners-prev{
+    right: 45px;
+}
+
+#partners-next{
+    right: 5px;
+}
 
 .company-presentation{
     margin-top: 120px;
@@ -358,7 +406,7 @@ footer{
     margin-top: 80px;
     background-color: #A89260;
     color: #ffffff;
-    margin-bottom: 0px;
+    margin-bottom: -16px;
 }
 
 footer img{
