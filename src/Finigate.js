@@ -1,9 +1,9 @@
 window.onload = function () {
-    let container = document.getElementById('container');
-    let list = document.getElementById('list');
-    let buttons = document.getElementById('buttons').getElementsByTagName('span');
-    let prev = document.getElementById('prev');
-    let next = document.getElementById('next');
+    let posterContainer = document.getElementById('poster-container');
+    let posterList = document.getElementById('poster-list');
+    let posterButtons = document.getElementById('poster-buttons').getElementsByTagName('span');
+    let posterPrev = document.getElementById('poster-prev');
+    let posterNext = document.getElementById('poster-next');
     let index = 1;
     let productList = document.getElementById('product-list');
     let productPrev = document.getElementById('product-prev');
@@ -13,37 +13,32 @@ window.onload = function () {
     let partnersNext = document.getElementById('partners-next');
     
     function showButton() {
-        for (let i = 0; i < buttons.length; i++){
-            if (buttons[i].className === 'on'){
-                buttons[i].className = '';
+        for (let i = 0; i < posterButtons.length; i++){
+            if (posterButtons[i].className === 'on'){
+                posterButtons[i].className = '';
                 break;
             }
         }
-        buttons[index - 1].className = 'on';
+        posterButtons[index - 1].className = 'on';
     }
 
-    function animate(offset) {
+    function animate(offset, list, number){
         let newLeft = parseInt(list.style.left) + offset;
         list.style.left = `${newLeft}px`;
-        if(newLeft > -1150){
-            list.style.left = `${-5750}px`;
+        if(offset > 0) {
+            offset = offset - 2 * offset;
         }
-        if(newLeft < -5750){
-            list.style.left = `${-1150}px`;
+        if(newLeft > offset && offset < 0) {
+            list.style.left = `${number * offset}px`;
+        }
+        if(newLeft < number * offset && offset < 0) {
+            list.style.left = `${offset}px`;    
         }
     }
 
-    function play() {
-        timer = setInterval(function() {
-            next.onclick();
-        }, 2000);
-    }
 
-    function stop() {
-        clearInterval(timer);
-    }
-
-    next.onclick = function () {
+    //poster animation
+    posterNext.onclick = function () {
         if (index === 5){
             index = 1;
         }else{
@@ -51,10 +46,10 @@ window.onload = function () {
         }
         
         showButton();
-        animate(-1150)
+        animate(-1150, posterList, 5);
     }
 
-    prev.onclick = function () {
+    posterPrev.onclick = function () {
         if (index === 1){
             index = 5;
         }else{
@@ -62,11 +57,11 @@ window.onload = function () {
         }
         
         showButton();
-        animate(1150)
+        animate(1150, posterList, 5);
     }
 
-    for(let i=0; i < buttons.length; i++) {
-        buttons[i].onclick = function () {
+    for(let i=0; i < posterButtons.length; i++) {
+        posterButtons[i].onclick = function () {
             if (this.className === 'on') {
                 return;
             }
@@ -78,78 +73,49 @@ window.onload = function () {
         }
     }
 
-    container.onmouseover = stop;
-    container.onmouseout = play;
-
-    play();
-
-    function productAnimate(offset) {
-        let newLeft = parseInt(productList.style.left) + offset;
-        productList.style.left = `${newLeft}px`;
-        if(newLeft > -1080){
-            productList.style.left = `${-8640}px`;
-        }
-        if(newLeft < -8640){
-            productList.style.left = `${-1080}px`;
-        }
-    }
-
-    function productPlay() {
+    function play(next) {
         timer = setInterval(function() {
-            productNext.onclick();
-        }, 2000);
+            next.onclick();
+        }, 3000);
     }
 
-    function productStop() {
+    function stop() {
         clearInterval(timer);
     }
 
+    posterContainer.onmouseover = stop;
+    posterContainer.onmouseout = play;
+
+    play(posterNext);
+
+
+    //product animation
     productNext.onclick = function () {
-        productAnimate(-1080);
+        animate(-1080, productList, 8);
     }
 
     productPrev.onclick = function () {
-        productAnimate(1080);
+        animate(1080, productList, 8);
     }
 
-    productList.onmouseout = productPlay;
-    productList.onmouseover = productStop;
+    productList.onmouseout = play;
+    productList.onmouseover = stop;
 
-    productPlay();
+    play(productNext);
 
-    function logoAnimate(offset) {
-        let newLeft = parseInt(partnersList.style.left) + offset;
-        partnersList.style.left = `${newLeft}px`;
-        if(newLeft > -1070){
-            partnersList.style.left = `${-12840}px`;
-        }
-        if(newLeft < -12840){
-            partnersList.style.left = `${-1070}px`;
-        }
-    }
 
-    function partnersPlay() {
-        timer = setInterval(function() {
-            partnersNext.onclick();
-        }, 2000);
-    }
-
-    function partnersStop() {
-        clearInterval(timer);
-    }
-
+    //partners animation
     partnersNext.onclick = function () {
-        logoAnimate(-1070);
+        animate(-1070, partnersList, 12);
     }
 
     partnersPrev.onclick = function() {
-        logoAnimate(1070);
+        animate(1070, partnersList, 12);
     }
 
-    partnersList.onmouseout = partnersPlay;
-    partnersList.onmouseover = partnersStop;
+    partnersList.onmouseout = play;
+    partnersList.onmouseover = stop;
 
-    partnersPlay();
-
+    play(partnersNext);
 }
 

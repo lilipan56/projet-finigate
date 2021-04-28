@@ -165,7 +165,7 @@ li a:hover{
     padding-top: 5px;
 }
 
-#container{
+#poster-container{
     margin-top: 250px;
     overflow: hidden;
     position: relative;
@@ -176,19 +176,19 @@ li a:hover{
     border: 1px solid #dddddd;
 }
 
-#list{
+#poster-list{
     position: absolute;
     z-index: 1;
     width: 8050px;
     height: 359px;
 }    
 
-#list img{
+#poster-list img{
     float: left;
     width: 1150px;
 }
 
-#buttons{
+#poster-buttons{
     position: absolute;
     height: 10px;
     width: 100px;
@@ -197,7 +197,7 @@ li a:hover{
     margin-left: 525px;
 }
 
-#buttons span{
+#poster-buttons span{
     cursor: pointer;
     float: left;
     width: 10px;
@@ -208,11 +208,11 @@ li a:hover{
     background-color: #808080;
 }
 
-#buttons .on{
+#poster-buttons .on{
     background-color: orangered;
 }
 
-.arrow{
+.poster-arrow{
     cursor: pointer;
     display: none;
     line-height: 39px;
@@ -229,19 +229,19 @@ li a:hover{
     background-color: rgba(0,0,0,0.3);
 }
 
-.arrow:hover{
+.poster-arrow:hover{
     background-color: rgba(0,0,0,0.7);
 }
 
-#container:hover .arrow{
+#poster-container:hover .poster-arrow{
     display: block;
 }
 
-#prev{
+#poster-prev{
     left: 50px;
 }
 
-#next{
+#poster-next{
     right: 50px;
 }
 
